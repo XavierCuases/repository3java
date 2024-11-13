@@ -1,22 +1,19 @@
-# Hello world whit Go
+#  Hello with java spring
 ## Results
 <p align="center">
-   <img src="./resultados/resultado1.png" alt="Hello from Go">
+   <img src="./resultados/resultado1.png" alt="Hello from Java Spring">
 </p>
 
-In this "Hello World" program written in Go, the application starts a basic web server that listens for HTTP requests. When a user navigates to the specified URL (usually http://localhost:9000), the server sends an HTML page in response. This page includes JavaScript code that manipulates the DOM to display the "Hello World" message. The Go program handles the backend server setup and routing, while the frontend JavaScript dynamically updates the content for the user.
+This "Hello World" application uses Java Spring to start a basic web server that listens on port 3000. When a user navigates to http://localhost:3000, the server responds with an HTML page displaying a "Hello" message. Java Spring manages the server setup and routing, while JavaScript in the HTML file dynamically updates the DOM to show the message to the user.
 
 ## :open_book: How to use
 * Clone the repository
 
     ```
-    git clone https://github.com/XavierCuases/Repository2Go.git
+    git clone https://github.com/XavierCuases/repository3java.git
     ```
 > [!NOTE]
-To get started, clone this repository to your computer and make sure Go is installed. The project’s main file, main.go, contains the code to start the web server. Open the project in a code editor, such as Visual Studio Code, and ensure that the Go environment is properly configured.
-
-To run the application, open a terminal in the root directory of the project and run the main.go file. This will start the server and you can access the application through a web browser at the URL http://localhost:9000. The web page will display the message "Hello World", which is manipulated through the DOM to present itself dynamically to the user.
-
+To run the "Hello World" project with Java Spring, first clone the repository and make sure you have Java JDK and Spring Boot installed on your machine. Open the project in a supported IDE such as IntelliJ IDEA, Eclipse, or VS Code, and build it using Maven or Gradle. Once the project is built, run the application with the appropriate command (mvn spring-boot:run for Maven or gradle bootRun for Gradle), which will start the server at http://localhost:3000. When you access this URL from your browser, you will see an HTML page that includes JavaScript code, which manipulates the DOM directly in the browser to display the message "Hello", without the need to make new requests to the server, thus improving the user experience .
 
 ## :rocket: How to run in docker
 ### Pre-requisites
@@ -25,55 +22,42 @@ To run the application, open a terminal in the root directory of the project and
 
 ### link image docker hub 
 
-
 ### Download image
 
-[ImagenGO](https://hub.docker.com/r/xaviercuases/exercise2go "click for visit")
+[ImagenGO](https://hub.docker.com/r/xaviercuases/ejercicio3java "click for visit")
 
 The link will be for the image to be able to download it
 ```
-docker pull xaviercuases/exercise2go
+docker pull xaviercuases/ejercicio3java
 ```
 > [!IMPORTANT]
-> Flask, by default, runs on port 5000 when using its built-in development server. This is intended for local development and testing purposes. If you need to change the port, Flask allows you to specify a different one when running the application.
+> JAVA SPRING, by default, runs on port 3000 when using its built-in development server. This is intended for local development and testing purposes. If you need to change the port, Flask allows you to specify a different one when running the application.
 ### Run image
 ```
-docker run --name <NEWCONTAINERNAME> -d -p 9000:8080 <IMAGENAME>
+docker run --name <NEWCONTAINERNAME> -d -p 3000:8080 <IMAGENAME>
 ```
 > [!TIP]
 > The name of the downloaded image must match the one placed in the previous command, for this you can verify it using the **docker images** command. Additionally, you must check that there is no other container with the same name as the one placed in the command.
 ### View the results
-Open new window browser and search localhost:9000
+Open new window browser and search localhost:3000
 
 [View results](#results)
 
 ## :light_rail: PAAS Deploy with docker (render)
 For its deployment in a PAAS we will rely on Render and its easy implementation thanks to its container management. 
 
-![Render Service](./resultados/render4.png "Service")
+![Render Service](./resultados/render1.png "Service")
 
-This project is deployed on Render, which supports multiple programming languages:
-
-Docker
-Elixir
-Go
-Node.js
-Python 3 (used in this project)
-Ruby
-Rust
-This project uses Go to run a web application on Render. Simply select "Go" during deployment, connect your repository, and follow Render’s setup instructions.
+This project is deployed on Render, which supports multiple programming languages, including Docker, Elixir, Go, Node.js, Python 3 (used in this project), Ruby, and Rust. Although Render does not support Java directly, this project uses Docker to containerize the application, allowing it to be deployed seamlessly. Simply select "Docker" during deployment, connect your repository, and follow Render’s setup instructions to deploy the project. This approach ensures that the application can run in any environment that supports Docker, including Render’s infrastructure.
 
 ![Build Container](./resultados/render2.png "Build Configuration")
 
 > [!IMPORTANT]
 > Next, This project is configured to deploy on Render with the following settings:
 
-Build Command: go build -o main main.go  Compila el archivo main.go y crea un ejecutable llamado main.
-Pre-Deploy Command: (Opcional) Para realizar tareas previas al despliegue, como migraciones (actualmente vacío).
-Start Command: go run main.go Ejecuta el archivo main.go para iniciar la aplicación.
-Auto-Deploy: Yes La aplicación se despliega automáticamente cuando se actualiza el código o la configuración.
+This setup specifies that Docker will use the ./Dockerfile located in the root directory to build the image, with the entire repository as the build context ($ .). No registry credentials are provided, so it’s assumed that either public images are used or authentication isn’t required. The Docker Command field is left empty, so the container will use the CMD or ENTRYPOINT defined in the Dockerfile to run the application.
 
 
 ![Generate Domain](./resultados/render3.png "Domain")
 
-[Hello World](https://repository2go.onrender.com "click for visit")
+[Hello World](https://repository3java.onrender.com "click for visit")
