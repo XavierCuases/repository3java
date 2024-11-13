@@ -24,7 +24,7 @@ To run the "Hello World" project with Java Spring, first clone the repository an
 
 ### Download image
 
-[ImagenGO](https://hub.docker.com/r/xaviercuases/ejercicio3java "click for visit")
+[ImagenJAVA](https://hub.docker.com/r/xaviercuases/ejercicio3java "click for visit")
 
 The link will be for the image to be able to download it
 ```
